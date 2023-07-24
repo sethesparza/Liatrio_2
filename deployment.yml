@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-build
+  labels: 
+    app: docker-build
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: docker-build
+  template:
+    metadata:
+      labels:
+        app: docker-build
+    spec:
+      containers: 
+      - name: docker-build
+        image: sethesparza/docker-build
+        ports:
+        - containerPort: 8080
+        env:
+        - name: FLASK_ENV
+          value: "production"
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: docker-build-service
+  labels:
+    app: docker-build
+spec:
+  selector:
+    app: docker-build
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer
