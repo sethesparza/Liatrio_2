@@ -1,3 +1,5 @@
+#####IGNORE TF FILES FOR NOW#######
+
 provider "aws" {
     region = local.region
 }
