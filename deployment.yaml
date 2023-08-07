@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: 946874051873.dkr.ecr.us-east-1.amazonaws.com/liatrio:latest
+          image: 946874051873.dkr.ecr.us-east-1.amazonaws.com/liatrio:latest #link to image within ECR repo
           ports:
             - containerPort: 80

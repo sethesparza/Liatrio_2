@@ -4,21 +4,26 @@ kubectl
 python (flask)
 docker
 kubernetes
-AWS
+AWS:
+    Services Used:
+        - ECR
+        - EKS
+        - EC2
+        - VPC
 
 
 
 to run application alone:
-    in terminal:
+    (while in app folder) via terminal:
         python app.py
 
 
 
 To build docker image and test it works:
     run docker file:
-        docker build -t docker-file .
+        docker build -t <choose name for image> .
 
-        docker run docker-file
+        docker run <name of image>
 
 
 
