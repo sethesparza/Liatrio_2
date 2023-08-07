@@ -7,6 +7,6 @@ spec:
   selector:
     app: web
   ports:
-    - nodePort: 31150
-      port: 80
-      targetPort: 80
+    - nodePort: 31150   #Specify node port for cluster
+      port: 8080        #Match with Flask application
+      targetPort: 80    #Listen for Port 80
